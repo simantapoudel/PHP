@@ -1,0 +1,18 @@
+PSR 12
+(PHP Standard Recommendations)
+
+Regarding methods and functions:
+    - snakeCase
+    - there must not be a space after opening parentheses and 
+      before closing parentheses.
+    - opening brace and closing brace should be on it's own line. 
+    - if there are many arguments, it is split across multiple lines
+      and each line should have only one argument
+    - closing parentheses and opening brace must be on same line with 
+      space between them in case of split argument list.
+
+Regarding control structures:
+    - whitespace between the clauses,
+        For example: if (2 < 3) {
+            echo "2 is less than 3";
+        }
