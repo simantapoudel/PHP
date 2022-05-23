@@ -1,0 +1,10 @@
+20th May 2022
+Finished Basics escaping regexp and superglobals
+Escaped form handling and directly moved to advanced
+Advanced: 
+    Messed around with date and time functions
+    include and require statements
+    File handling
+        - opening, reading and writing to the File  
+            readfile(), fopen(), fread(), fwrite()
+            

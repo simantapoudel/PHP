@@ -1,0 +1,6 @@
+Day 5: Sunday
+    Objectives:     
+        Php filters, Callback functions, JSON, Exceptions
+        Revising previously studied topics
+        OOP Basics
+        

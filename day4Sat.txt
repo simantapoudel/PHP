@@ -1,0 +1,4 @@
+Did things related to file handling:
+    Opening, reading and closing the file   
+    creating and writing to a file
+    uploading a file

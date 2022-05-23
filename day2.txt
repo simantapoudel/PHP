@@ -1,0 +1,6 @@
+19th May
+
+Used loops, functions
+Mostly coded functions:
+    implemented fibonacci sequence,lucas sequence, checked prime number,
+    oddeven
