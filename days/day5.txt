@@ -1,0 +1,4 @@
+24th May 2022 Tuesday:
+    PSR 12
+    Reference array php functions
+    Studied and practiced basic mysql

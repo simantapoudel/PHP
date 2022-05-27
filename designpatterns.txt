@@ -1,2 +1,2 @@
-Creational Pattern
-    - Abstract Factory
+Yet to be studied after completing OOP
+    Design Patterns
