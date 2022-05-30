@@ -33,5 +33,6 @@
         gravity();
     */
     
-    
+    define("company", "FAZESOFT");
+    echo company;
 ?>

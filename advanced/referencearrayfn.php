@@ -64,6 +64,16 @@
         
         array_values() => returns all the values from the array and indexes the array numerically.
         array_map(callback fn, array, array1) => runs the callback fn through each element in an array.
+        Example: 
+
+        function salestax($price)
+        {
+            return ($price * 0.13) + $price;
+        }
+
+        $productsprice = [240, 456, 124, 458];
+        $finalprice = array_map('salestax', $productsprice);
+        print_r($finalprice);
         */
     
     // $desc = array("name" => "simanta", "country" => "nepal", "place" => "bhaktapur");
@@ -77,16 +87,12 @@
     // $squarednumbers = array_map('square', $numbers);
     // print_r($squarednumbers);
 
-    function salestax($price)
-    {
-        return ($price * 0.13) + $price;
-    }
-
-    $productsprice = [240, 456, 124, 458];
-    $finalprice = array_map('salestax', $productsprice);
-    print_r($finalprice);
     
-
+    $desc = array("name" => "simanta", "country" => "nepal", "place" => "bhaktapur");
+    while (list($key, $val) = each($desc)) {
+        echo "$key " . "=" . $val;
+    }
+?>
     
     
 

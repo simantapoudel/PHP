@@ -8,6 +8,7 @@
         }
         hello();
 
+        
         function take arguments inside parentheses
         example:
         function hellofamily($fname) {
@@ -25,6 +26,15 @@
         }
         login('Sarisna',16);
         login('Sabina', 23);
+        
+        // Passing arguments by value         
+        function passbyvalue($string)
+        {
+            $string .= "Have a good day!";
+            return $string;
+        }
+        $str = "Good afternoon! ";
+        echo passbyvalue($str);
 
         When function requires int to be passed but gets a string,
         it throws a fatal error.
@@ -140,11 +150,21 @@
             $num = 2;
             multiplyFive($num);
             echo $num;
+
+            function passbyref(&$string)
+            {
+                $string .= "Have a nice cup of coffee!";
+            }
+            $str = " ";
+            passbyref($str);
+            echo $str;
             
     */
-    
-    
-
-    
-    
+   
+    $fname = 'Simanta';
+    $lname = 'Poudel';
+    $match = ($fname == $lname) ? "Matched" : "Didn't Match";
+    echo $match;
 ?>
+
+

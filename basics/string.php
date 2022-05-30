@@ -27,4 +27,7 @@
     strpos("EARTH", "R") finds position of R in EARTH and returns 2
     echo strpos("EARTH", "R");
  */
+$country = 'Nepal';
+$place = 'Lokanthali';
+echo strcmp($country, $place);
 ?>

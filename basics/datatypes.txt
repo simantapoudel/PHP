@@ -1,0 +1,2 @@
+Php supports following data types:
+    String, Integer, Float, Boolean, Array, Object, NULL, Resource
