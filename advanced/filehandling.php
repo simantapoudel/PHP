@@ -45,11 +45,15 @@
                     If 'a' append mode is chosen, then it doesn't erase
                     anything but just adds content after the last word
                     of the previous contents of the file.
+
+                    copy('web.txt', 'new.txt'); copy contents of old file 
+                    if there exists no file to copy to, it creates a new file
+                    by the given name
+                    rename('web.txt', 'old.txt'); rename renames a file
+                    unlink('old.txt'); unlink() deletes a file
     */
-    $file = fopen('web.txt', 'a') or die('Error occured');
-    $text = 'Added content using a mode';
-    fwrite($file, $text);
-    fclose($file);
+    
+
 
    
 ?>

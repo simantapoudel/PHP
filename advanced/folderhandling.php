@@ -17,6 +17,6 @@
     } else {
         echo "Folder already created";
     }
-    rmdir("./folder");
+    // rmdir("./folder");
     clearstatcache();
 
