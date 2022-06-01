@@ -61,15 +61,52 @@ if ($conn->connect_error) {
 
 // $stmt->close();
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
+// $sql = "SELECT id, firstname, lastname FROM MyGuests"; // Selects the columns from the database table to be displayed
+// $result = $conn->query($sql); // runs the query and stores the result set in variable $result
+
+//num-rows returns the number of rows in the result set
+// if ($result->num_rows > 0) {
+//     echo "<table><tr><th>ID</th><th>Name</th></tr>";
+//     // output data of each row
+       // fetch_assoc() puts all the result in an associative array to loop through if num_rows > 0 
+//     while($row = $result->fetch_assoc()) {
+//       echo "<tr><td>".$row["id"]."</td><td>".$row["firstname"]." ".$row["lastname"]."</td></tr>";
+//     }
+//     echo "</table>";
+//   } else {
+//     echo "0 results";
+// }
+
+
+//Deletion of records
+
+// $sql = "DELETE FROM MyGuests WHERE firstname='Hari' AND lastname='Bahadur'";
+// if ($conn->query($sql) === TRUE) {
+//     echo "Record deleted successfully";
+// } else {
+//     echo "Deletion failed";
+// }
+
+//Updating the records
+
+// $sql = "UPDATE MyGuests SET firstname='Eye', lastname='Phone' WHERE firstname='Parley' AND lastname='G'";
+// $sql = "UPDATE MyGuests SET email='eyephone@gmail.com' WHERE email='parley@gmail.com'";
+
+// if ($conn->query($sql) === TRUE) {
+//     echo "Record updated successfully";
+// } else {
+//     echo "Update failed";
+// }
+
+$sql = "SELECT * FROM MyGuests LIMIT 2, 2";
 $result = $conn->query($sql);
 
- if ($result->num_rows > 0) {
-     while ($row = $result->fetch_assoc()) {
-         echo $row['id'] . " " . $row['firstname'] . " " . $row['lastname'] . "<br>";
-     }
- } else {
-     echo "0 results";
- }
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo $row['id'] . " " . $row['firstname'] . " " . $row['lastname'] . "<br>";
+    }
+} else {
+    echo "No results";
+}
 
 $conn->close();
