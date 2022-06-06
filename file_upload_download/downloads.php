@@ -1,3 +1,4 @@
+<?php include 'configdb.php';?>
 <?php include 'filesLogic.php';?>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,27 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File download</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    <table>
-        <thead>
-            <th>ID</th>
-            <th>Filename</th>
-            <th>Size in KB</th>
-            <th>Downloads</th>
-            <th>Action</th>
-        </thead>
-        <tbody>
-            <?php print_r($files); ?>
-            <?php foreach ($files as $file): ?>
-                <tr>
-                    <td><?php echo $file['id']; ?></td>
-                    <td><?php echo $file['name']; ?></td>
-                    <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-                    <td><?php echo $file['downloads']; ?></td>
-                    <td><a href="downloads.php?file_id=<?php echo $file['id']; ?>">Download</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
+    <a class="link" href="form.php">Go back to Upload form</a>
+    <?php while ($files = $result->fetch_assoc()): ?>
+        <p><?php echo $files['id'] . " " . $files['name'] . " " . 
+        floor($files['size'] / 1000) . "KB" . " " . $files['downloads'] . "<br>"; ?></p>
+        <a class="link" href="downloads.php?file_id=<?php echo $files['id'] ?>">Download</a>
+    <?php endwhile; ?>
+
 </body>
 </html>

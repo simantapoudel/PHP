@@ -1,40 +1,39 @@
+<?php include 'configdb.php' ?>
 <?php
-
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'file-management';
-
-//Making connection to the database
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = "SELECT * FROM files";
 $result = $conn->query($sql);
-$files = $result->fetch_assoc();
+// $files = '';
+
 
 //uploading files   
 if (isset($_POST['upload'])) { //if upload button is clicked on the form
     //name of the uploaded file
     $filename = $_FILES['myfile']['name'];
+    // print_r($_FILES['myfile']);
     //destination of file on the server
     $target_dir = "uploads/";
     $destination = $target_dir . $filename;
     //extension of the uploaded file
-    $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    // $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    $extensionarray = explode('.', $filename);
+    $extension = strtolower(end($extensionarray));
     //physical file of the temporary uploads directory on the server
-    $file = $_FILES['myfile']['tmp_name'];
+    $tempfile = $_FILES['myfile']['tmp_name'];
     //size of the uploaded file
     $size = $_FILES['myfile']['size'];
 
-    if (!in_array($extension, ['pdf', 'zip', 'docx', 'jpeg', 'jpg'])) {
-        echo "The files must be in pdf, zip, docx, jpg and jpeg format";
+    if (!in_array($extension, ['pdf', 'zip', 'docx', 'jpeg', 'jpg', 'png'])) {
+        echo "The files must be in pdf, zip, docx, jpg, png and jpeg format";
     } elseif ($size > 10000000) { //files must be <= 10mb
         echo "File too large";
     } else {
-        if (move_uploaded_file($file, $destination)) {
+        if (move_uploaded_file($tempfile, $destination)) {
             $sql = "INSERT INTO files (name, size, downloads) VALUES ('$filename', $size, 0)";
             if ($conn->query($sql)) {
-                echo "File uploaded";
+                // echo "File uploaded";
+                // header("refresh:0;url=downloads.php");
+                header("Location: downloads.php");
             } else {
                 echo "File not uploaded";
             }
@@ -52,13 +51,12 @@ if (isset($_GET['file_id'])) {
     if (file_exists($filepath)) {
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename=' . basename($filepath));
+        header('Content-Disposition: attachment; filename=' .basename($filepath));
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
         header('Pragma: public');
-        header('Content-Length: ' . filesize('uploads/' . $file['name']));
-        header('Location: downloads.php');
-        readfile('uploads/' . $file['name']);
+        header('Content-Length: ' . filesize($filepath));
+        readfile($filepath);
 
         // Now updating downloads count
         $newCount = $file['downloads'] + 1;
@@ -69,3 +67,5 @@ if (isset($_GET['file_id'])) {
 }
 
 $conn->close();
+
+?>

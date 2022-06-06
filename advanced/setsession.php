@@ -24,6 +24,7 @@
         //Setting session variables
         $_SESSION['username'] = 'Simanta';
         $_SESSION['location'] = 'Nepal';
+        echo "Session variables are set";
     ?>
 </body>
 </html>

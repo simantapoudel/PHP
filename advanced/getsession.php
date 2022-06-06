@@ -11,10 +11,9 @@
 </head>
 <body>
     <?php
-        // session_unset(); //removes session variables 
-        // session_destroy(); //completely destroy session
+        // print_r($_SESSION);
         echo "User is " . $_SESSION['username'] . "<br>";
-        echo "User resides in " . $_SESSION['location'];
+        echo "User resides in " . $_SESSION['location'] . "<br>";
     ?>
 </body>
 </html>
