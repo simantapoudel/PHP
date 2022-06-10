@@ -20,3 +20,7 @@
     // rmdir("./folder");
     clearstatcache();
 
+    $newfile = fopen("./folder/file.txt", "w");
+    fwrite()
+
+

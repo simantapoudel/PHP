@@ -16,3 +16,8 @@ Regarding control structures:
         For example: if (2 < 3) {
             echo "2 is less than 3";
         }
+
+Abstract, final and static
+
+abstract and final before access modifier or visibility
+static after modifier or visibility

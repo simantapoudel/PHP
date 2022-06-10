@@ -33,7 +33,7 @@ if (isset($_POST['upload'])) { //if upload button is clicked on the form
             if ($conn->query($sql)) {
                 // echo "File uploaded";
                 // header("refresh:0;url=downloads.php");
-                header("Location: downloads.php");
+                header("Location: downloads.php"); //redirect to downloads.php
             } else {
                 echo "File not uploaded";
             }
