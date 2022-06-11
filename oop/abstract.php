@@ -10,24 +10,29 @@
  * 
  */
 
- abstract class Animal 
- {
-     public $name;
-     public function __construct($name)
-     {
-         $this->name = $name;
-     }
-     abstract public function sound();
- }
+//  abstract class Animal 
+//  {
+//      public $name;
+//      public function __construct($name)
+//      {
+//          $this->name = $name;
+//      }
+//      public function vision()
+//      {
+//          echo "Can have implementation part";
+//      }
+//     //  abstract public function sound();
+//  }
 
- class Dog extends Animal
- {
-    public function sound()
-    {
-        return "Dog $this->name";
-    }
-    
- }
+//  class Dog extends Animal
+//  {
+//     public function sound()
+//     {
+//         return "Dog $this->name";
+//     }
+//  }
 
- $shepherd = new Dog("Barks");
-echo $shepherd->sound();
+// $shepherd = new Dog("Bhau Bhau");
+// echo $shepherd->sound();
+// echo "<br>";
+// echo $shepherd->vision();
